@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "target": "es6",
+        "noImplicitAny": true,
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "outDir": "dist",
+        "baseUrl": ".",
+        "typeRoots": ["node_modules/@types"],
+        "paths": {
+            "prisma": ["database/generated/index.ts"],
+            "*": [
+                "node_modules/*",
+            ]
+        }
+    },
+    "include": [
+        "src/**/*",
+        "database/**/*"
+    ]
+}

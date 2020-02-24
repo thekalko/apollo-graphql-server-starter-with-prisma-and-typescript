@@ -1,0 +1,10 @@
+datamodel:
+  - database/typeDefs/enums.graphql
+  - database/typeDefs/types.graphql
+endpoint: ${env:PRISMA_ENDPOINT}
+secret: ${env:PRISMA_SECRET}
+generate:
+  - generator: graphql-schema
+    output: ./database/generated/prisma.graphql
+  - generator: typescript-client
+    output: ./database/generated

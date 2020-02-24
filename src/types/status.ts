@@ -1,0 +1,5 @@
+type STATUS = "ACTIVE" | "INACTIVE";
+const ACTIVE: STATUS = 'ACTIVE';
+const INACTIVE: STATUS = 'ACTIVE';
+
+export {ACTIVE, INACTIVE}
