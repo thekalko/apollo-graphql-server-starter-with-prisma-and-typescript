@@ -1,6 +1,7 @@
 {
   "parser": "@typescript-eslint/parser",
   "extends": ["plugin:@typescript-eslint/recommended"],
+  "prefixWithI": "always",
   "parserOptions": {
     "ecmaVersion": 2018,
     "sourceType": "module"
