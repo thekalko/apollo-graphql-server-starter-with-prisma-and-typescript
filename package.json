@@ -8,10 +8,9 @@
   "license": "GPL-v3",
   "private": true,
   "scripts": {
-    "dev": "yarn build:dev && nodemon dist/src/app.js",
-    "prod": "yarn build:production && node build/src/app.js",
-    "build:dev": "rm -rf dist && tsc -p . && yarn prisma generate",
-    "build:production": "rm -rf build && tsc -p tsconfig.release.json && yarn prisma generate",
+    "dev": "yarn build && nodemon dist/src/app.js",
+    "prod": "yarn build && node dist/src/app.js",
+    "build": "rm -rf dist && tsc -p . && yarn prisma generate",
     "prisma": "prisma",
     "prisma-deploy": "prisma export && prisma deploy && prisma generate",
     "lint": "tsc --noEmit && eslint \"**/*.{js,ts}\" --quiet --fix"
