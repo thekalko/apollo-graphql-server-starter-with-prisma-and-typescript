@@ -10,9 +10,9 @@
   "scripts": {
     "dev": "yarn build:dev && nodemon dist/src/app.js",
     "prod": "yarn build:production && node build/src/app.js",
-    "build:dev": "rm -rf dist && tsc -p .",
+    "build:dev": "rm -rf dist && tsc -p . && yarn prisma generate",
+    "build:production": "rm -rf build && tsc -p tsconfig.release.json && yarn prisma generate",
     "prisma": "prisma",
-    "build:production": "rm -rf build && tsc -p tsconfig.release.json",
     "prisma-deploy": "prisma export && prisma deploy && prisma generate",
     "lint": "tsc --noEmit && eslint \"**/*.{js,ts}\" --quiet --fix"
   },

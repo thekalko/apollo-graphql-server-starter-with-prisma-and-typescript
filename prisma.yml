@@ -8,3 +8,7 @@ generate:
     output: ./database/generated/prisma.graphql
   - generator: typescript-client
     output: ./database/generated
+  - generator: graphql-schema
+    output: ./dist/database/generated/prisma.graphql
+  - generator: javascript-client
+    output: ./dist/database/generated
