@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>🚀 Boilerplate forl Apollo GraphQL Server w/ Prisma and TypeScript</h1>
+  <h1>🚀 Boilerplate for Apollo GraphQL Server w/ Prisma and TypeScript</h1>
 </div>
 
 ## Getting Started
@@ -7,7 +7,6 @@
 ### 1. Install dependencies
 ```
 yarn install
-yarn global add prisma-cli
 ```
 
 ### 2. Install the Prisma service
@@ -17,7 +16,7 @@ docker-compose up -d
 ```
 
 ### 3. Deploy Prisma
-Set up your Prisma endpoint and secret.
+Set up your Prisma endpoint and secret...
 
 database/docker-compose.yml
 ```
@@ -33,10 +32,10 @@ PRISMA_SECRET=
 PRISMA_MANAGEMENT_API_SECRET=
 ```
 
-and deploy prisma
+... and deploy prisma
 
 ```
-pridma deploy
+yarn prisma deploy
 ```
 
 ### 4. Start the GraphQL server

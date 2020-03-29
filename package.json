@@ -11,6 +11,7 @@
     "dev": "yarn build:dev && nodemon dist/src/app.js",
     "prod": "yarn build:production && node build/src/app.js",
     "build:dev": "rm -rf dist && tsc -p .",
+    "prisma": "prisma",
     "build:production": "rm -rf build && tsc -p tsconfig.release.json",
     "prisma-deploy": "prisma export && prisma deploy && prisma generate",
     "lint": "tsc --noEmit && eslint \"**/*.{js,ts}\" --quiet --fix"
