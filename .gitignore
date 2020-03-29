@@ -11,6 +11,11 @@ Thumbs.db
 
 # Ignore built ts files
 dist/**/*
+build/**/*
 
 # Ignore prisma export
 export-*.zip
+/database/generated/**/*
+
+# Yarn
+yarn-error.log
