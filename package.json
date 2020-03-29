@@ -9,7 +9,7 @@
   "private": true,
   "scripts": {
     "start": "npm run serve",
-    "serve": "node dist/server.js",
+    "serve": "node dist/src/app.js",
     "build": "tsc -p . && ncp src/schemas dist/schemas",
     "prisma-deploy": "prisma export && prisma deploy && prisma generate",
     "lint": "tsc --noEmit && eslint \"**/*.{js,ts}\" --quiet --fix"
