@@ -1,21 +1,19 @@
-import { prisma, User } from "prisma";
 import { ACTIVE } from "../../types/status";
+import { prisma } from '../../../prisma/prisma';
+import { User } from "@prisma/client";
 
 interface Args  {
+  name: string;
   email: string;
-  password: string;
-  firstName: string;
-  lastName: string;
 }
 
 export default {
   createUser: async (_: void, args: Args, ctx: void): Promise<User> => {
-    return await prisma.createUser({
-      email: args.email,
-      password: args.password,
-      firstName: args.firstName,
-      lastName: args.lastName,
-      status: ACTIVE
-    });
+    return await prisma.user.create({
+      data: {
+        name: args.name,
+        email: args.email,
+      }
+    })
   }
 };

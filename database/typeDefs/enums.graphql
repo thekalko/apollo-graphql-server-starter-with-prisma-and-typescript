@@ -1,4 +1,0 @@
-enum STATUS {
-  ACTIVE
-  INACTIVE
-}

@@ -10,12 +10,15 @@
   "scripts": {
     "dev": "yarn build && nodemon dist/src/app.js",
     "prod": "yarn build && node dist/src/app.js",
-    "build": "rm -rf dist && tsc -p . && yarn prisma generate",
-    "prisma": "prisma",
-    "prisma-deploy": "prisma export && prisma deploy && prisma generate",
+    "build": "rm -rf dist && tsc -p . && yarn prisma-generate",
+    "prisma": "npx prisma",
+    "prisma-generate": "npx prisma generate",
+    "prisma-migrate": "npx prisma migrate save --experimental && npx prisma migrate up --experimental",
+    "migrate": "yarn prisma-migrate && yarn prisma-generate",
     "lint": "tsc --noEmit && eslint \"**/*.{js,ts}\" --quiet --fix"
   },
   "dependencies": {
+    "@prisma/client": "2.0.0-beta.5",
     "@types/express": "^4.17.2",
     "apollo-server-express": "^2.10.1",
     "body-parser": "^1.19.0",
@@ -28,10 +31,10 @@
     "lodash": "^4.17.15",
     "module-alias": "^2.2.2",
     "nodemon": "^2.0.2",
-    "prisma-client-lib": "^1.34.10",
     "typescript": "^3.8.2"
   },
   "devDependencies": {
+    "@prisma/cli": "2.0.0-beta.5",
     "@types/graphql": "^14.5.0",
     "@types/graphql-depth-limit": "^1.1.2",
     "@types/node": "^13.7.4",
@@ -40,6 +43,6 @@
     "ts-node": "^8.6.2"
   },
   "_moduleAliases": {
-    "prisma": "dist/database/generated/index.js"
+    "prisma": "dist/prisma/prisma.js"
   }
 }

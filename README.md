@@ -9,33 +9,19 @@
 yarn install
 ```
 
-### 2. Install the Prisma service
+### 2. Set yout database
+
+#### optional - create MySQL docker
+
 ```
-cd database
+cd prisma
 docker-compose up -d
 ```
 
-### 3. Deploy Prisma
-Set up your Prisma endpoint and secret...
-
-database/docker-compose.yml
-```
- PRISMA_CONFIG: |
-        #set up your prisma management secret
-        managementApiSecret: 12345
-        port: 4466
-```
-.env
-```
-PRISMA_ENDPOINT=
-PRISMA_SECRET=
-PRISMA_MANAGEMENT_API_SECRET=
-```
-
-... and deploy prisma
+#### set up your database url in your prisma/.env file
 
 ```
-yarn prisma deploy
+DATABASE_URL=
 ```
 
 ### 4. Start the GraphQL server
