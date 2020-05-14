@@ -3,7 +3,7 @@
         "module": "commonjs",
         "esModuleInterop": true,
         "allowSyntheticDefaultImports": true,
-        "target": "es6",
+        "target": "es2018",
         "noImplicitAny": true,
         "moduleResolution": "node",
         "sourceMap": true,
@@ -11,7 +11,7 @@
         "baseUrl": ".",
         "typeRoots": ["node_modules/@types"],
         "paths": {
-            "prisma": ["database/generated/index.ts"],
+            "prisma": ["prisma/prisma.ts"],
             "*": [
                 "node_modules/*",
             ]
@@ -19,6 +19,6 @@
     },
     "include": [
         "src/**/*",
-        "database/**/*"
+        "prisma/**/*",
     ]
 }

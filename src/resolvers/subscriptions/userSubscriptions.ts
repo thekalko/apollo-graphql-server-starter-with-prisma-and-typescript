@@ -1,25 +1,7 @@
-import { prisma, UserSubscriptionPayloadSubscription } from "prisma";
-import { ACTIVE } from "../../types/status";
-
-interface Args  {
-  email: string;
-  password: string;
-  firstName: string;
-  lastName: string;
-}
-
+//todo: prisma 2 missisng subscription....
 export default {
   newUser: {
-    subscribe: async (_: void, args: Args, ctx: void): Promise<AsyncIterator<UserSubscriptionPayloadSubscription>>=> {
-      return await prisma.$subscribe.user({
-        mutation_in: ["CREATED"],
-        node: {
-          status: ACTIVE
-        },
-      })
-      .node()
-      .$fragment("{ id email }");
-    },
+    subscribe: () => {},
     resolve: (payload: void) => {
       return payload;
     },
