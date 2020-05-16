@@ -12,6 +12,7 @@
         "typeRoots": ["node_modules/@types"],
         "paths": {
             "prisma": ["prisma/prisma.ts"],
+            "src/*": ["src/*"],
             "*": [
                 "node_modules/*",
             ]

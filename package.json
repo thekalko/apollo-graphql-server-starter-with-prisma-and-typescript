@@ -43,6 +43,7 @@
     "ts-node": "^8.6.2"
   },
   "_moduleAliases": {
-    "prisma": "dist/prisma/prisma.js"
+    "prisma": "dist/prisma/prisma.js",
+    "src": "dist/src"
   }
 }
