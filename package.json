@@ -28,7 +28,7 @@
     "graphql": "^14.6.0",
     "graphql-import": "^1.0.0-beta.2",
     "graphql-tools": "^4.0.7",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "module-alias": "^2.2.2",
     "nodemon": "^2.0.2",
     "typescript": "^3.8.2"
