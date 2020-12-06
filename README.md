@@ -24,9 +24,13 @@ docker-compose up -d
 DATABASE_URL=
 ```
 
-### 4. Start the GraphQL server
+### 4. Start the GraphQL server or run it with docker
 ```
 yarn dev
+```
+
+```
+yarn docker && yarn docker:run
 ```
 
 ## License
