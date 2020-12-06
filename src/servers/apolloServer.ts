@@ -11,9 +11,9 @@ export default {
       schema: makeExecutableSchema({
         typeDefs: typeDefs,
         resolvers: resolverMap,
-        resolverValidationOptions: {
-          requireResolversForResolveType: false,
-        },
+        // resolverValidationOptions: {
+        //   requireResolversForResolveType: false,
+        // },
       }),
       context: async ctx => {
         if (ctx && ctx.connection) {
@@ -21,7 +21,7 @@ export default {
         }
 
         //resolve user 
-        //const user = getUser(req.headers.authorization || "");
+        //const user = authTheUser(req.headers.authorization || "");
         const user = {
           id: "....",
           email: "exampleuser@gmail.com",
