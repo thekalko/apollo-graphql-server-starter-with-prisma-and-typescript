@@ -9,18 +9,22 @@
   "private": true,
   "scripts": {
     "dev": "yarn build && nodemon dist/src/app.js",
-    "prod": "yarn build && node dist/src/app.js",
-    "build": "rm -rf dist && tsc -p . && yarn prisma-generate",
+    "start": "yarn build && node dist/src/app.js",
+    "build": "rm -rf dist && tsc -p .",
     "prisma": "npx prisma",
     "prisma-generate": "npx prisma generate",
     "prisma-migrate": "npx prisma migrate save --experimental && npx prisma migrate up --experimental",
     "migrate": "yarn prisma-migrate && yarn prisma-generate",
-    "lint": "tsc --noEmit && eslint \"**/*.{js,ts}\" --quiet --fix"
+    "lint": "tsc --noEmit && eslint \"**/*.{js,ts}\" --quiet --fix",
+    "test": "npx jest --notify --config=jest.config.js",
+    "docker": "docker build --tag apollostarter:1.0.0 .",
+    "docker:run": "docker run -p 0.0.0.0:4000:4000 -d apollostarter:1.0.0"
   },
   "dependencies": {
     "@prisma/client": "^2.12.1",
     "@types/express": "^4.17.2",
     "apollo-server-express": "^2.19.0",
+    "apollo-server-testing": "^2.19.0",
     "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",
     "eslint": "^7.15.0",
@@ -41,6 +45,8 @@
     "@types/node": "^14.14.10",
     "@typescript-eslint/eslint-plugin": "^4.9.0",
     "@typescript-eslint/parser": "^4.9.0",
+    "jest": "^26.6.3",
+    "ts-jest": "^26.4.4",
     "ts-node": "^9.1.0"
   },
   "_moduleAliases": {

@@ -1,10 +1,8 @@
-FROM node:erbium-alpine
-RUN mkdir -p /usr/src/app
+FROM node:12.18.0-alpine
 WORKDIR /usr/src/app
-COPY package.json .
-COPY yarn.lock .
-RUN yarn
 COPY . .
 RUN mv .env.production .env
-ENV NODE_ENV=production
-CMD ["node", "src/index.js"]
+RUN yarn install
+RUN yarn build
+CMD [ "yarn", "start" ]
+EXPOSE 4000
